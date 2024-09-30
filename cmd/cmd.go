@@ -453,7 +453,7 @@ func RunHandler(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	opts.MultiModal = slices.Contains(info.Details.Families, "clip")
+	opts.MultiModal = slices.Contains(info.Details.Families, "clip") || slices.Contains(info.Details.Families, "mllama.vision")
 	opts.ParentModel = info.Details.ParentModel
 
 	if interactive {

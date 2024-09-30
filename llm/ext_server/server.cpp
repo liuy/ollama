@@ -409,7 +409,7 @@ struct llama_server_context
                 }
 
                 const std::string arch = gguf_get_val_str(gguf_ctx, arch_index);
-                if (arch == "mllama") {
+                if (arch == "mllama.vision") {
                     mllama_ctx = mllama_model_load(params.mmproj.c_str(), /*verbosity=*/ 1);
                     if (mllama_ctx == nullptr) {
                         LOG_ERROR("unable to load mllama model", {{"model", params.mmproj}});
